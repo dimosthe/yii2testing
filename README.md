@@ -25,7 +25,7 @@ Deployment
    package dependencies inlcuding the yii core source code.
 4. Run `init` to initialize the application with a specific environment.
 2. Create a new database and adjust the `components['db']` configuration in `common/config/main-local.php` accordingly.
-3. Apply migrations with console command `yii migrate`. This will create tables needed for the application to work.
+3. Apply migrations on the Yii2-user module to create the tables. Run `yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations` 
   
 How to run
 ----------
