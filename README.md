@@ -1,7 +1,11 @@
 yii2testing
 ===========
 
-Experimenting with Yii2 framework. It uses [Yii 2 Advanced Application Template](https://github.com/yiisoft/yii2-app-advanced)  
+Experimenting with Yii2 framework. It uses [Yii 2 Advanced Application Template](https://github.com/yiisoft/yii2-app-advanced) 
+
+Modules added
+-------------
+- [Yii2-user](http://yii2-user.readthedocs.org/en/latest/index.html)
 
 Requirements
 ------------
