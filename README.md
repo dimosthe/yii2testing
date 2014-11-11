@@ -20,8 +20,8 @@ Deployment
 1. Clone the repository 
 2. Run `composer global require "fxp/composer-asset-plugin:1.0.0-beta3"`. Installs the composer asset plugin which allows managing
    bower and npm package dependencies through Composer. You only need to run this command once for all. 
-3. Run `composer update` in the root directory of the application in order to
-   install/update dependencies. This will create the vendor directory with all
+3. Run `composer install` in the root directory of the application in order to
+   install dependencies. This will create the vendor directory with all
    package dependencies inlcuding the yii core source code.
 4. Run `init` to initialize the application with a specific environment.
 2. Create a new database and adjust the `components['db']` configuration in `common/config/main-local.php` accordingly.
