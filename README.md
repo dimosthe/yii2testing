@@ -9,7 +9,8 @@ Modules added
 
 Requirements
 ------------
-- PHP > 5.4.0 
+- PHP > 5.4.0
+- php5-curl  
 - Composer. If you do not have [Composer](http://getcomposer.org/), you can run
   the following commands on Linux and Mac OS X:
   1. `curl -s http://getcomposer.org/installer | php`
@@ -23,9 +24,9 @@ Deployment
 3. Run `composer install` in the root directory of the application in order to
    install dependencies. This will create the vendor directory with all
    package dependencies inlcuding the yii core source code.
-4. Run `init` to initialize the application with a specific environment.
+4. Run `./init` to initialize the application with a specific environment.
 2. Create a new database and adjust the `components['db']` configuration in `common/config/main-local.php` accordingly.
-3. Apply migrations on the Yii2-user module to create the tables. Run `yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations` 
+3. Apply migrations on the Yii2-user module to create the tables. Run `./yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations` 
   
 How to run
 ----------
