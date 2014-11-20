@@ -10,7 +10,8 @@ Modules added
 Requirements
 ------------
 - PHP > 5.4.0
-- php5-curl  
+- php5-curl 
+- php5-intl 
 - Composer. If you do not have [Composer](http://getcomposer.org/), you can run
   the following commands on Linux and Mac OS X:
   1. `curl -s http://getcomposer.org/installer | php`
@@ -33,7 +34,7 @@ How to run
 1. You can use php build-in web server. Run `php -S localhost:8000` from the
    root directory
 2. Point your browser to `http://localhost:8000/frontend/web` 
-3. To login into the application, you need to first sign up, with any of your email address, username and password. 
+3. To login into the application, you need to first sign up, with any of your email address, username (use admin to get admin priviledges) and password. 
    Then, you can login into the application with same email address and password at any time. 
 
 
