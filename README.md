@@ -12,6 +12,7 @@ Requirements
 - PHP > 5.4.0
 - php5-curl 
 - php5-intl 
+- php5-mcrypt
 - Composer. If you do not have [Composer](http://getcomposer.org/), you can run
   the following commands on Linux and Mac OS X:
   1. `curl -s http://getcomposer.org/installer | php`

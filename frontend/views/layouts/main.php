@@ -42,11 +42,14 @@ AppAsset::register($this);
                 $menuItems[] = ['label' => 'Login', 'url' => ['/user/security/login']];
             } else {
                 $menuItems[]= ['label' => 'My Profile', 'url' => ['/user/settings/profile']];
+                if(\Yii::$app->user->can('admin'))
+                    $menuItems[]= ['label' => 'Admin', 'url' => ['/user/admin/index']];
                 $menuItems[] = [
                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                     'url' => ['/user/security/logout'],
                     'linkOptions' => ['data-method' => 'post']
                 ];
+
             }
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],

@@ -18,8 +18,8 @@ class UserRoleRule extends Rule {
             return $role == 'admin';
         } elseif ($item->name === 'editor') {
             return $role == 'admin' || $role == 'editor'; //editor is a child of admin
-        }	elseif ($item->name === 'user') {
-            return $role == 'admin' || $role == 'editor' || $role == 'user'; || $role == NULL; //user is a child of editor and admin, if we have no role defined this is also the default role
+        } elseif ($item->name === 'user') {
+            return $role == 'admin' || $role == 'editor' || $role == 'user' || $role == NULL; //user is a child of editor and admin, if we have no role defined this is also the default role
         } else {
             return false;
         }

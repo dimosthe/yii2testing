@@ -5,11 +5,19 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-         'authManager' => [
+        'authManager' => [
             'class' => 'yii\rbac\PhpManager', // or use 'yii\rbac\DbManager'
+            'defaultRoles' => ['admin','editor','user'], // here define your roles
             'itemFile' => '@console/data/items.php',
             'assignmentFile' => '@console/data/assignments.php',
             'ruleFile' => '@console/data/rules.php'
+        ],
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@dektrium/user/views' => '@frontend/views/user' //overrides views for yii2-user
+                ],
+            ],
         ]
     ],
     'modules' => [
@@ -18,9 +26,14 @@ return [
             'enableUnconfirmedLogin' => true,
             'confirmWithin' => 21600,
             'cost' => 12,
-            'admins' => ['admin']
+            'admins' => ['admin'],
+            'components' => [
+                'manager' => [
+                    'userClass' => 'common\models\User', //overrides User model
+                ],
+            ],
         ],
-         'admin' => [
+         /*'admin' => [
             'class' => 'mdm\admin\Module',
             'controllerMap' => [
                  'assignment' => [
@@ -31,7 +44,7 @@ return [
             ],
             'layout' => 'left-menu', // default null. other avaliable value 'right-menu' and 'top-menu'
         
-        ]
+        ]*/
     ],
     /*'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
