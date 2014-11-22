@@ -22,6 +22,7 @@ class User extends BaseUser
         }
 
         $this->role = "user"; // use default role 'user'
+        
         $this->trigger(self::USER_REGISTER_INIT);
 
         if ($this->save()) {

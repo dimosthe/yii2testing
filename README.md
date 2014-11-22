@@ -7,6 +7,13 @@ Modules added
 -------------
 - [Yii2-user](http://yii2-user.readthedocs.org/en/latest/index.html)
 
+Features
+--------
+- Login/Signup
+- Users admin panel (create, update, delete users)
+- Rbac
+- User profile management 
+
 Requirements
 ------------
 - PHP > 5.4.0
@@ -27,15 +34,18 @@ Deployment
    install dependencies. This will create the vendor directory with all
    package dependencies inlcuding the yii core source code.
 4. Run `./init` to initialize the application with a specific environment.
-2. Create a new database and adjust the `components['db']` configuration in `common/config/main-local.php` accordingly.
-3. Apply migrations on the Yii2-user module to create the tables. Run `./yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations` 
+5. Create a new database and adjust the `components['db']` configuration in `common/config/main-local.php` accordingly.
+6. Apply migrations on the Yii2-user module to create the tables. Run `./yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations` 
+7. Run `./yii create-users/create` to create the admin user (username='admin', password='administrator')
   
 How to run
 ----------
 1. You can use php build-in web server. Run `php -S localhost:8000` from the
    root directory
 2. Point your browser to `http://localhost:8000/frontend/web` 
-3. To login into the application, you need to first sign up, with any of your email address, username (use admin to get admin priviledges) and password. 
-   Then, you can login into the application with same email address and password at any time. 
+3. To login into the application you can either
+- Sign up, with any of your email address, username and password. Then, you can login into the application with same email address and 
+  password at any time (you wont receive an email confirmation) or
+- Use the default admin credentials (admin, administrator) in order to benefit administrator priviledges.  
 
 
