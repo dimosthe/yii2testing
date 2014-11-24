@@ -1,4 +1,12 @@
 <?php
+/**
+ * This model overrides the User model defined in yii2-user module
+ * overrided methods: 
+ * -> register(): A "user" role is attached to the new user after registration
+ *
+ * @author George Dimosthenous
+ **/
+
 namespace common\models;
 use dektrium\user\models\Token;
 use yii\log\Logger;

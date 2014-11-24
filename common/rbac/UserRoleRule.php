@@ -1,4 +1,9 @@
 <?php 
+/**
+ * This rule uses the user role from user table
+ * 
+ * @author George Dimosthenous
+ **/
 namespace common\rbac; 
 use yii\rbac\Rule; 
 /**  

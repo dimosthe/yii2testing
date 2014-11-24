@@ -1,4 +1,15 @@
 <?php 
+/**
+ * This controller creates the roles and permissions. It shoud be executed when  
+ * the project is initialized. Specifically it:
+ * - defines roles and permissions;
+ * - establishes relations among roles and permissions;
+ * - defines rules;
+ * - associates rules with roles and permissions;
+ *
+ * If you want to create new roles you need to add them to your RbacController.php, to your UserRoleRule.php and to defaultRoles array in main.php.
+ **/
+
 namespace console\controllers; 
 use Yii; 
 use yii\console\Controller; 
