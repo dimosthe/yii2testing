@@ -32,6 +32,9 @@ return [
                     'userClass' => 'common\models\User', //overrides User model
                 ],
             ],
+            'controllerMap' => [
+                'security' => 'common\controllers\SecurityController'
+            ],
         ],
          /*'admin' => [
             'class' => 'mdm\admin\Module',
