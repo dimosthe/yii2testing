@@ -22,5 +22,17 @@ class SecurityController extends BaseSecurityController
             'model' => $model
         ]);
     }
+
+     /**
+     * Logs the user out and then redirects to the homepage.
+     *
+     * @return \yii\web\Response
+     */
+    public function actionLogout()
+    {
+        \Yii::$app->getUser()->logout();
+
+        return $this->redirect(['//site/about']);//$this->goHome();
+    }
 }
 ?>
