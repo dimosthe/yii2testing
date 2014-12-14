@@ -33,16 +33,15 @@ Deployment
 3. Run `composer install` in the root directory of the application in order to
    install dependencies. This will create the vendor directory with all
    package dependencies inlcuding the yii core source code.
-4. Run `./init` to initialize the application with a specific environment.
-5. Create a new database and adjust the `components['db']` configuration in `common/config/main-local.php` accordingly.
-6. Apply migrations on the Yii2-user module to create the tables. Run `./yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations` 
-7. Run `./yii create-users/create` to create the admin user (username='admin', password='administrator')
+4. Create a new database and adjust the `components['db']` configuration in `common/config/main-local.php` accordingly.
+5. Apply migrations on the Yii2-user module to create the tables. Run `./yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations` 
+6. Run `./yii create-users/create` to create the admin user (username='admin', password='administrator')
   
 How to run
 ----------
 1. You can use php build-in web server. Run `php -S localhost:8000` from the
-   root directory
-2. Point your browser to `http://localhost:8000/frontend/web` 
+   root directory (`www` directory)
+2. Point your browser to `http://localhost:8000/` 
 3. To login into the application you can either
 - Sign up, with any of your email address, username and password. Then, you can login into the application with same email address and 
   password at any time (you wont receive an email confirmation) or
