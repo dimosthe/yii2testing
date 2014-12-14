@@ -11,6 +11,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\widgets\Breadcrumbs;
 
 /**
  * @var yii\web\View $this
@@ -21,8 +22,18 @@ use yii\grid\GridView;
 $this->title = Yii::t('user', 'Manage users');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<h1><?= Html::encode($this->title) ?> <?= Html::a(Yii::t('user', 'Create a user account'), ['create'], ['class' => 'btn btn-success']) ?></h1>
 
+<section class="content-header">
+    <h1><?= Html::encode($this->title) ?> <?= Html::a(Yii::t('user', 'Create a user account'), ['create'], ['class' => 'btn btn-success']) ?></h1>
+    <ol class="breadcrumb">
+        <li><a href="<?= Yii::$app->homeUrl; ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active"><?= $this->title; ?></li>
+    </ol>
+
+
+
+</section>
+<section class="content">
 <?php echo $this->render('@dektrium/user/views/admin/flash') ?>
 
 <?php echo GridView::widget([
@@ -103,3 +114,5 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ],
 ]); ?>
+
+</section>

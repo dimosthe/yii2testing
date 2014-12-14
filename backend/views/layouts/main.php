@@ -1,6 +1,9 @@
 <?php
 use backend\assets\AppAsset;
+use backend\assets\CustomAsset;
 use yii\helpers\Html;
+use yii\helpers\Url;
+
 /*use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;*/
@@ -9,6 +12,7 @@ use yii\widgets\Breadcrumbs;*/
 /* @var $content string */
 
 AppAsset::register($this);
+CustomAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -24,8 +28,9 @@ AppAsset::register($this);
 <body class="skin-blue">
     <?php $this->beginBody() ?>
     <!-- header logo: style can be found in header.less -->
+       
         <header class="header">
-            <a href="index.html" class="logo">
+            <a href="<?= Yii::$app->homeUrl; ?>" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
                 My Company
             </a>
@@ -299,26 +304,20 @@ AppAsset::register($this);
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
-                        <li class="active">
-                            <a href="index.html">
-                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                            </a>
-                        </li>
                         <li>
-                            <a href="pages/widgets.html">
-                                <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
+                            <a href="<?= Yii::$app->homeUrl; ?>">
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-bar-chart-o"></i>
-                                <span>Charts</span>
+                                <i class="fa fa-users"></i>
+                                <span>Users</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> Morris</a></li>
-                                <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i> Flot</a></li>
-                                <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Inline charts</a></li>
+                                <li><a href="<?= Url::to(['/user/admin/index']); ?>"><i class="fa fa-angle-double-right"></i> List Users</a></li>
+                                <li><a href="<?= Url::to(['/site/login']); ?>"><i class="fa fa-angle-double-right"></i> Create User</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -397,9 +396,7 @@ AppAsset::register($this);
         
        
     </div>
-
-
-
+    
     <?php $this->endBody() ?>
 </body>
 </html>

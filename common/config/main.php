@@ -15,7 +15,7 @@ return [
         'view' => [
             'theme' => [
                 'pathMap' => [
-                    '@dektrium/user/views' => '@frontend/views/user' //overrides views for yii2-user
+                    '@dektrium/user/views' => '@backend/views/user' //overrides views for yii2-user
                 ],
             ],
         ]
