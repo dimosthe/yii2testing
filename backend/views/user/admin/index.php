@@ -20,18 +20,14 @@ use yii\widgets\Breadcrumbs;
  */
 
 $this->title = Yii::t('user', 'Manage users');
-$this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <section class="content-header">
     <h1><?= Html::encode($this->title) ?> <?= Html::a(Yii::t('user', 'Create a user account'), ['create'], ['class' => 'btn btn-success']) ?></h1>
     <ol class="breadcrumb">
         <li><a href="<?= Yii::$app->homeUrl; ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active"><?= $this->title; ?></li>
+        <li class="active"><?= Html::encode($this->title); ?></li>
     </ol>
-
-
-
 </section>
 <section class="content">
 <?php echo $this->render('@dektrium/user/views/admin/flash') ?>

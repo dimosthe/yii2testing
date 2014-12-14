@@ -1,4 +1,3 @@
- //$(document).ready(function() {
-        $('a[href="' + this.location.pathname + '"]').parent().addClass('active');
-        //alert(window.location.pathname);
-   // });
+/* Enables links when are active*/
+$('a[href="' + this.location.pathname + '"]').parent().addClass('active');
+$('a[href="' + this.location.pathname + '"]').parent().parent().parent().addClass('active');

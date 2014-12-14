@@ -12,6 +12,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\Url;
 
 /**
  * @var yii\web\View $this
@@ -19,21 +20,27 @@ use yii\widgets\ActiveForm;
  */
 
 $this->title = Yii::t('user', 'Update user account');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('user', 'Users'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
 
 $roles = ['admin'=>'Admin', 'editor'=>'Editor', 'user'=>'User'];
 ?>
-<h1><i class="glyphicon glyphicon-user"></i> <?= Html::encode($model->username) ?>
-    <?php if (!$model->getIsConfirmed()): ?>
-        <?= Html::a(Yii::t('user', 'Confirm'), ['confirm', 'id' => $model->id], ['class' => 'btn btn-success btn-xs', 'data-method' => 'post']) ?>
-    <?php endif; ?>
-    <?php if ($model->getIsBlocked()): ?>
-        <?= Html::a(Yii::t('user', 'Unblock'), ['block', 'id' => $model->id], ['class' => 'btn btn-success btn-xs', 'data-method' => 'post', 'data-confirm' => Yii::t('user', 'Are you sure to block this user?')]) ?>
-    <?php else: ?>
-        <?= Html::a(Yii::t('user', 'Block'), ['block', 'id' => $model->id], ['class' => 'btn btn-danger btn-xs', 'data-method' => 'post', 'data-confirm' => Yii::t('user', 'Are you sure to block this user?')]) ?>
-    <?php endif; ?>
-</h1>
+<section class="content-header">
+    <h1><i class="glyphicon glyphicon-user"></i> <?= Html::encode($model->username) ?>
+        <?php if (!$model->getIsConfirmed()): ?>
+            <?= Html::a(Yii::t('user', 'Confirm'), ['confirm', 'id' => $model->id], ['class' => 'btn btn-success btn-xs', 'data-method' => 'post']) ?>
+        <?php endif; ?>
+        <?php if ($model->getIsBlocked()): ?>
+            <?= Html::a(Yii::t('user', 'Unblock'), ['block', 'id' => $model->id], ['class' => 'btn btn-success btn-xs', 'data-method' => 'post', 'data-confirm' => Yii::t('user', 'Are you sure to block this user?')]) ?>
+        <?php else: ?>
+            <?= Html::a(Yii::t('user', 'Block'), ['block', 'id' => $model->id], ['class' => 'btn btn-danger btn-xs', 'data-method' => 'post', 'data-confirm' => Yii::t('user', 'Are you sure to block this user?')]) ?>
+        <?php endif; ?>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="<?= Yii::$app->homeUrl; ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= Url::to(['/user/admin/index']); ?>">Users</a></li>
+        <li class="active"><?= Html::encode($this->title); ?></li>
+    </ol>
+</section>
+<section class="content">
 
 <?php echo $this->render('@dektrium/user/views/admin/flash') ?>
 
@@ -74,3 +81,4 @@ $roles = ['admin'=>'Admin', 'editor'=>'Editor', 'user'=>'User'];
         <?php ActiveForm::end(); ?>
     </div>
 </div>
+</section>

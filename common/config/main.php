@@ -18,6 +18,13 @@ return [
                     '@dektrium/user/views' => '@backend/views/user' //overrides views for yii2-user
                 ],
             ],
+        ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'rules' => [
+                // your rules go here
+            ],
         ]
     ],
     'modules' => [

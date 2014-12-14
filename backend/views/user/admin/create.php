@@ -12,6 +12,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Url;
 
 /**
  * @var yii\web\View $this
@@ -19,18 +20,21 @@ use yii\helpers\ArrayHelper;
  */
 
 $this->title = Yii::t('user', 'Create a user account');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('user', 'Users'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
 
 $roles = ['admin'=>'Admin', 'editor'=>'Editor', 'user'=>'User'];
 ?>
-
+<section class="content-header">
+    <h1><?= Html::encode($this->title) ?></h1>
+    <ol class="breadcrumb">
+        <li><a href="<?= Yii::$app->homeUrl; ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?= Url::to(['/user/admin/index']); ?>">Users</a></li>
+        <li class="active"><?= Html::encode($this->title); ?></li>
+    </ol>
+</section>
+<section class="content">
 <?php echo $this->render('@dektrium/user/views/admin/flash') ?>
 
 <div class="panel panel-default">
-    <div class="panel-heading">
-        <?= Html::encode($this->title) ?>
-    </div>
     <div class="panel-body">
         <div class="alert alert-info">
             <?= Yii::t('user', 'Password and username will be sent to user by email') ?>.
@@ -53,3 +57,4 @@ $roles = ['admin'=>'Admin', 'editor'=>'Editor', 'user'=>'User'];
         <?php ActiveForm::end(); ?>
     </div>
 </div>
+</section>

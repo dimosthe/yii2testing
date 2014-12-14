@@ -316,8 +316,8 @@ CustomAsset::register($this);
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="<?= Url::to(['/user/admin/index']); ?>"><i class="fa fa-angle-double-right"></i> List Users</a></li>
-                                <li><a href="<?= Url::to(['/site/login']); ?>"><i class="fa fa-angle-double-right"></i> Create User</a></li>
+                                <li><a href="<?= Url::to(['/user/admin/index']); ?>"><i class="fa fa-angle-double-right"></i> Manage Users</a></li>
+                                <li><a href="<?= Url::to(['/user/admin/create']); ?>"><i class="fa fa-angle-double-right"></i> Create User</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
