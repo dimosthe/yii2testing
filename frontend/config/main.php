@@ -12,7 +12,23 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
-        'user' => [
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'rules' => [
+                // your rules go here
+			]
+		],
+		'urlManagerBackend' => [
+            'class' => 'yii\web\urlManager',
+			'baseUrl' => '/admin',
+			'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'rules' => [
+                // your rules go here
+            ]
+		],
+		'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
         ],

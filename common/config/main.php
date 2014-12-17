@@ -19,13 +19,13 @@ return [
                 ],
             ],
         ],
-        'urlManager' => [
+        /*'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
                 // your rules go here
             ],
-        ]
+		  ]*/
     ],
     'modules' => [
         'user' => [
