@@ -42,6 +42,16 @@ return [
             'controllerMap' => [
                 'security' => 'common\controllers\SecurityController'
             ],
+            'urlRules' => [
+                '<id:\d+>'                     => 'profile/show',
+                //'<action:(login|logout)>'      => 'security/<action>',
+                //'<action:(register|resend)>'   => 'registration/<action>',
+                /*'confirm/<id:\d+>/<token:\w+>' => 'registration/confirm',
+                'forgot'                       => 'recovery/request',
+                'recover/<id:\d+>/<token:\w+>' => 'recovery/reset',
+                'settings/<action:\w+>'        => 'settings/<action>'*/
+            ]
+
         ],
          /*'admin' => [
             'class' => 'mdm\admin\Module',

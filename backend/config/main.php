@@ -18,6 +18,9 @@ return [
             'showScriptName' => false,
             'rules' => [
                 // your rules go here
+                'users'=>'user/admin/index',
+                'user/create'=>'user/admin/create',
+                'user/update/<id:\d+>'=>'user/admin/update'
 			]
 		],
 		'urlManagerFrontend' => [
