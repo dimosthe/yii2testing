@@ -17,7 +17,10 @@ class SecurityController extends BaseSecurityController
             $profile = $this->module->manager->findProfileById($user_id);
             $name = is_null($profile->name) || empty(trim($profile->name))?\Yii::$app->user->identity->username:$profile->name;
             \Yii::$app->session->set('user.name', $name);
-            return $this->goBack();
+            if (\Yii::$app->user->can('viewAdmin'))
+                return $this->redirect(['/admin']);
+            else
+                return $this->goBack();
         }
 
         return $this->render('login', [
@@ -34,7 +37,7 @@ class SecurityController extends BaseSecurityController
     {
         \Yii::$app->getUser()->logout();
 
-        return $this->redirect(['//site/about']);//$this->goHome();
+        return $this->redirect(['//']);
     }
 }
 ?>

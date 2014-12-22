@@ -33,14 +33,15 @@ return [
             'enableUnconfirmedLogin' => true,
             'confirmWithin' => 21600,
             'cost' => 12,
-            'admins' => ['admin'],
+            'admins' => ['admin'], // roles that can manage users
             'components' => [
                 'manager' => [
                     'userClass' => 'common\models\User', //overrides User model
                 ],
             ],
             'controllerMap' => [
-                'security' => 'common\controllers\SecurityController'
+                'security' => 'common\controllers\SecurityController',
+                'admin' => 'backend\controllers\AdminController'
             ],
             'urlRules' => [
                 '<id:\d+>'                     => 'profile/show',

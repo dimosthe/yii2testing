@@ -1,4 +1,5 @@
 <?php
+use yii\filters\AccessControl;
 $params = array_merge(
     require(__DIR__ . '/../../common/config/params.php'),
     require(__DIR__ . '/../../common/config/params-local.php'),
@@ -36,7 +37,7 @@ return [
 		'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
-            'loginUrl' => ['/user/security/login'],
+            'loginUrl' => '/login',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -51,5 +52,16 @@ return [
             'errorAction' => 'site/error',
         ],
     ],
+    'as beforeRequest' => [
+    'class' => 'yii\filters\AccessControl',
+    'rules' => [
+        
+        [
+
+            'allow' => true,
+            'roles' => ['@'],
+        ],
+    ],
+],
     'params' => $params,
 ];
