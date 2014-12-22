@@ -42,7 +42,7 @@ AppAsset::register($this);
                 $menuItems[] = ['label' => 'Login', 'url' => ['/user/security/login']];
             } else {
                 $menuItems[]= ['label' => 'My Profile', 'url' => ['/user/settings/profile']];
-                if(\Yii::$app->user->can('admin'))
+                if(\Yii::$app->user->can('viewAdmin'))
                     $menuItems[]= ['label' => 'Admin', 'url' => ['/admin']];
                 $menuItems[] = [
                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')',

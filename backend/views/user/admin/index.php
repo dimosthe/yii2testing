@@ -10,6 +10,7 @@
  */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\grid\GridView;
 use yii\widgets\Breadcrumbs;
 
@@ -90,8 +91,14 @@ $this->title = Yii::t('user', 'Manage users');
         ],
         [
             'class' => 'yii\grid\ActionColumn',
-            'template' => '{update} {delete}',
+            'template' => '{view} {update} {delete}',
             'buttons' => [
+                'view' => function ($url, $model) {
+                    return Html::a('<i class="glyphicon glyphicon-eye-open"></i>', Url::to(['/user/profile/show', 'id'=>$model->id]), [
+                        'class' => 'btn btn-xs btn-success',
+                        'title' => Yii::t('yii', 'View'),
+                    ]);
+                },
                 'update' => function ($url, $model) {
                     return Html::a('<i class="glyphicon glyphicon-wrench"></i>', $url, [
                         'class' => 'btn btn-xs btn-info',

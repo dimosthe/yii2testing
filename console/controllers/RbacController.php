@@ -23,6 +23,11 @@ class RbacController extends Controller {
 		$auth->removeAll(); //remove previous rbac.php files under console/data
 	 
 	    //CREATE PERMISSIONS		
+		//Permission to view admin UI
+		$viewAdmin = $auth->createPermission('viewAdmin');
+	    $viewAdmin->description = 'Access admin UI';
+	    $auth->add($viewAdmin);
+
 		//Permission to create users
 		$createUsers = $auth->createPermission('createUsers');
 	    $createUsers->description = 'Create Users';
@@ -52,6 +57,7 @@ class RbacController extends Controller {
 		// ... add permissions as children of $editor ..
 	    $auth->addChild($editor, $user); //user is a child of editor
 		$auth->addChild($editor, $editUserProfile); //editor can edit profiles
+		$auth->addChild($editor, $viewAdmin); //editor can view admin UI
 	 
 		//Admin role
 		$admin = $auth->createRole('admin');

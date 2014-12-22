@@ -6,8 +6,10 @@ use dektrium\user\controllers\SecurityController as BaseSecurityController;
 
 class SecurityController extends BaseSecurityController
 {
+    
     public function actionLogin()
     {
+        $this->layout = '@frontend/views/layouts/main';
         $model = $this->module->manager->createLoginForm();
 
         if ($model->load(\Yii::$app->getRequest()->post()) && $model->login()) {

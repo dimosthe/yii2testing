@@ -1,5 +1,9 @@
 <?php
 return [
+    'viewAdmin' => [
+        'type' => 2,
+        'description' => 'Access admin UI',
+    ],
     'createUsers' => [
         'type' => 2,
         'description' => 'Create Users',
@@ -18,6 +22,7 @@ return [
         'children' => [
             'user',
             'editUserProfile',
+            'viewAdmin',
         ],
     ],
     'admin' => [

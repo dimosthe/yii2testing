@@ -249,7 +249,7 @@ CustomAsset::register($this);
                                     <img src="img/avatar3.png" class="img-circle" alt="User Image" />
                                     <p>
                                         <?= \Yii::$app->session->get('user.name'); ?>
-                                        <small>Member since Nov. 2012</small>
+                                        <small><?= Yii::t('user', 'Member since {0, date}', Yii::$app->user->identity->created_at); ?></small>
                                     </p>
                                 </li>
                                 <!-- Menu Body -->

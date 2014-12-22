@@ -24,7 +24,7 @@ $this->title = Yii::t('user', 'Update user account');
 $roles = ['admin'=>'Admin', 'editor'=>'Editor', 'user'=>'User'];
 ?>
 <section class="content-header">
-    <h1><i class="glyphicon glyphicon-user"></i> <?= Html::encode($model->username) ?>
+    <h1><i class="glyphicon glyphicon-user"></i> <?= Html::encode($model->username)?>  <?= Html::a(Yii::t('user', 'Show user account'), ['/user/profile/show','id'=>$model->id], ['class' => 'btn btn-success btn-xs']) ?>
         <?php if (!$model->getIsConfirmed()): ?>
             <?= Html::a(Yii::t('user', 'Confirm'), ['confirm', 'id' => $model->id], ['class' => 'btn btn-success btn-xs', 'data-method' => 'post']) ?>
         <?php endif; ?>
