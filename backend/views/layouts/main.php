@@ -269,7 +269,7 @@ CustomAsset::register($this);
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                        <a href="<?= Yii::$app->urlManagerFrontend->createUrl('/user/settings/profile') ?>" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
                                         <a href="<?= Url::to(['/site/logout']); ?>" data-method="post" class="btn btn-default btn-flat">Sign out</a>
@@ -317,6 +317,7 @@ CustomAsset::register($this);
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
+                        <?php if(\Yii::$app->user->can('admin')): ?>
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-users"></i>
@@ -328,6 +329,7 @@ CustomAsset::register($this);
                                 <li><a href="<?= Url::to(['/user/admin/create']); ?>"><i class="fa fa-angle-double-right"></i> Create User</a></li>
                             </ul>
                         </li>
+                        <?php endif ?>
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-laptop"></i>

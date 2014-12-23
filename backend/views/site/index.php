@@ -18,6 +18,7 @@ $this->title = 'My Company | Dashboard';
 <section class="content">
 	<!-- Small boxes (Stat box) -->
     <div class="row">
+    	<?php if(\Yii::$app->user->can('admin')): ?>
     	<div class="col-lg-3 col-xs-6">
 	    	<div class="small-box bg-yellow">
 	        	<div class="inner">
@@ -32,6 +33,7 @@ $this->title = 'My Company | Dashboard';
 	            </a>
 	        </div>
 	    </div>
+		<?php endif?>
 	    <div class="col-lg-3 col-xs-6">
 	    	<div class="small-box bg-red">
 	        	<div class="inner">

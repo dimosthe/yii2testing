@@ -31,6 +31,7 @@ return [
             'showScriptName' => false,
             'rules' => [
                 // your rules go here
+                'settings/<action:\w+>' => 'user/settings/<action>',
             ]
 		],
 	
