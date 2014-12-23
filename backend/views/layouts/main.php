@@ -36,6 +36,7 @@ CustomAsset::register($this);
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
+                <?php if(\Yii::$app->user->can('viewAdmin')): ?>
                 <!-- Sidebar toggle button-->
                 <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
                     <span class="sr-only">Toggle navigation</span>
@@ -43,6 +44,7 @@ CustomAsset::register($this);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
+               
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
@@ -277,12 +279,14 @@ CustomAsset::register($this);
                         </li>
                     </ul>
                 </div>
+            <?php endif; ?>
             </nav>
         </header>
     
     <div class="wrapper row-offcanvas row-offcanvas-left">
+        <?php if(\Yii::$app->user->can('viewAdmin')): ?>
         <!-- Left side column. contains the logo and sidebar -->
-            <aside class="left-side sidebar-offcanvas">
+        <aside class="left-side sidebar-offcanvas">
                 <!-- sidebar: style can be found in sidebar.less -->
                 <section class="sidebar">
                     <!-- Sidebar user panel -->
@@ -390,13 +394,16 @@ CustomAsset::register($this);
                 </section>
                 <!-- /.sidebar -->
             </aside> 
+
              <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
                 <?= $content ?>
             </aside>
-
-       
-      
+            <?php else:?>
+            <aside class="strech">
+                <?= $content ?>
+            </aside>
+            <?php endif; ?>
         
        
     </div>

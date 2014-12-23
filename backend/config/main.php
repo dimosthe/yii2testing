@@ -53,15 +53,13 @@ return [
         ],
     ],
     'as beforeRequest' => [
-    'class' => 'yii\filters\AccessControl',
-    'rules' => [
-        
-        [
-
-            'allow' => true,
-            'roles' => ['@'],
+        'class' => 'yii\filters\AccessControl',
+        'rules' => [
+            [
+                'allow' => true,
+                'roles' => ['@'],
+            ],
         ],
     ],
-],
     'params' => $params,
 ];
